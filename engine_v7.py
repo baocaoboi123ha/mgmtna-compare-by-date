@@ -21,11 +21,11 @@ def _orig_engine_path() -> Path:
 
 def _load_orig():
     path = _orig_engine_path()
-    spec = importlib.util.spec_from_file_location("_engine_orig", path)
+    spec = importlib.util.spec_from_file_location("_engine_orig_v7", path)
     if spec is None or spec.loader is None:
         raise ImportError(f"Khong load duoc engine goc: {path}")
     mod = importlib.util.module_from_spec(spec)
-    sys.modules["_engine_orig"] = mod
+    sys.modules["_engine_orig_v7"] = mod
     spec.loader.exec_module(mod)
     return mod
 
