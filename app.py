@@ -22,6 +22,11 @@ VERSIONS: dict[str, dict[str, str]] = {
         "suffix": " - ByDate 8.0.xlsx",
         "blurb": "Qty bán thực tế, công thức quy đổi, checkqty Base; viền bảng Compare/Unit/TongHop.",
     },
+    "9.0": {
+        "module": "engine_v9",
+        "suffix": " - ByDate 9.0.xlsx",
+        "blurb": "Giống 8.0, thêm list mã thiếu Unit một bên (BC hoặc TP) chứ không chỉ lệch Unit Base.",
+    },
 }
 
 XLSX = ["xlsx"]
@@ -85,7 +90,7 @@ with header_right:
     version = st.selectbox(
         "Phiên bản",
         options=list(VERSIONS.keys()),
-        index=list(VERSIONS.keys()).index("8.0"),
+        index=list(VERSIONS.keys()).index("9.0"),
         key="engine_version",
         help="Chọn engine xử lý; file tải về ghi hậu tố ByDate tương ứng.",
     )
